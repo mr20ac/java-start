@@ -1,0 +1,47 @@
+package com.company;
+
+import java.util.Scanner;
+
+class Per {
+    int hours;
+    int payment;
+    int othour;
+    String job;
+void calcre(int bb) {
+System.out.print(bb);
+    {
+
+    }
+}
+
+void gey() {
+
+
+;
+    double tt = 1.5;
+    int wage = payment * hours;
+    double hrw = payment * tt;
+    int en = (int) (hrw * othour);
+    int bb = wage + en;
+    calcre(bb);
+
+
+}
+}
+public class Classo {
+
+    public static void main(String[] args) {
+    Per Pv = new Per();
+    Scanner key = new Scanner(System.in);
+    System.out.println("Name");
+    Pv.job = key.nextLine();
+    System.out.println("Time a day");
+     Pv.hours = key.nextInt();
+    System.out.println("$ per hour");
+    Pv.payment = key.nextInt();
+    System.out.println("What is overtime hours");
+    Pv.othour = key.nextInt();
+
+    Pv.gey();
+    }
+}
