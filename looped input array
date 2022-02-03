@@ -1,0 +1,27 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Integer> ini =  new ArrayList<>();
+        Scanner key = new Scanner(System.in);
+        System.out.print("how many numbers");
+        int o = key.nextInt();
+        System.out.println("add numbers");
+        int i = 0;
+        for (i = 0; i < o; i++) {
+            int l = key.nextInt();
+            ini.add(l);
+        }
+        for (Integer integer : ini) {
+            System.out.println(integer);
+        }
+
+    }
+    void me(){
+
+
+    }
+}
