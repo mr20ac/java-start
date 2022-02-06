@@ -1,0 +1,43 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+
+
+
+public class Main {
+    int arraysize;
+    int arrayvalue;
+    Scanner scan = new Scanner(System.in);
+    ArrayList<Integer> ip = new ArrayList<>();
+
+    static void back(int arraysize) {
+        Main pw = new Main();
+        for (int i = 0; i < arraysize; i++) {
+            pw.arrayvalue = pw.scan.nextInt();
+            pw.ip.add(pw.arrayvalue);
+        }
+        for (Integer io : pw.ip) {
+            System.out.println(io);
+        }
+
+    }
+    public static void main(String[] args) {
+
+       Main pw = new Main();
+
+        System.out.println("enter array size");
+        pw.arraysize = pw.scan.nextInt();
+        System.out.println("enter array values");
+        pw.back(pw.arraysize);
+
+
+    }
+
+
+
+
+    }
+
