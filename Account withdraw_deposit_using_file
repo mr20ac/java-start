@@ -1,0 +1,63 @@
+package com.company;
+import java.io.*;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Scanner;
+import java.io.*;
+public class Main {
+int amountw;
+int amountd;
+int balance;
+int balancew;
+    int balanced;
+Scanner ui = new Scanner(System.in);
+public void deposit(int balanceget) throws IOException {
+    Main wd = new Main();
+    wd.balance = balanceget;
+
+    System.out.println("how much would you like to desposit?");
+    wd.amountd = ui.nextInt();
+    if (wd.balance >= wd.amountd) {
+        wd.balanced = wd.balance + wd.amountd;
+    } else
+        System.out.println("you do not have suffnicent funds");
+    {
+        System.out.println("you have " + wd.balanced + " remanng");
+
+    }
+
+
+}
+
+    public void withdraw(int balanceget) {
+    Main wd = new Main();
+  wd.balance = balanceget;
+    System.out.println("How much would you like to withdraw?");
+    wd.amountw = ui.nextInt();
+    if (wd.balance >= wd.amountw) {
+        wd.balancew = wd.balance - wd.amountw;
+        System.out.println("you have " + wd.balancew + " Remaining");
+    } else {
+        System.out.println("you do not have suffiencent funds");
+    }
+
+}
+    public static void main(String[] args)  throws IOException {
+Main oo = new Main();
+String os = "C:\\Users\\markv\\IdeaProjects\\Accountbank\\sss.txt";
+File filetext = new File("sss.txt");
+Scanner s = new Scanner(filetext);
+int balanceget = s.nextInt();
+System.out.println("what would  you like to do?");
+String type = oo.ui.nextLine();
+        if (type.contains("withdraw")) {
+            oo.withdraw(balanceget);
+        }else if (type.contains("deposit")) {
+            oo.deposit(balanceget);
+        }
+
+
+
+    }
+}
