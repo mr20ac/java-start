@@ -1,0 +1,30 @@
+package com.company;
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+    void doact(String pon) throws Exception {
+        Main ob = new Main();
+
+        File ov = new File(pon);
+        ov.createNewFile();
+    }
+
+    public static void main(String[] args) throws Exception {
+        Main oo = new Main();
+        Scanner pon = new Scanner(System.in);
+        while (true) {
+
+
+            System.out.println("enter file name");
+            String aa = pon.nextLine();
+            if (aa.isEmpty()) {
+                break;
+            } else {
+                oo.doact(aa);
+
+            }
+        }
+    }
+}
