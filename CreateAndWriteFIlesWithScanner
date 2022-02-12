@@ -1,0 +1,53 @@
+package com.company;
+import java.io.File;  // Import the File class
+import java.io.IOException;  // Import the IOException class to handle errors
+import java.util.Scanner;
+import java.io.FileWriter;   // Import the FileWriter class
+
+public class Main {
+    Scanner ssc = new Scanner(System.in);
+String sb;
+    String dd;
+    void Auguso() throws Exception {
+Main a = new Main();
+System.out.println("enter file name");
+a.dd = a.ssc.nextLine();
+        FileWriter ir = new FileWriter(a.dd);
+        System.out.println("What to write");
+       a.sb = a.sc.nextLine();
+
+        ir.write(a.sb);
+ir.close();
+    }
+
+
+    String s;
+
+Scanner sc = new Scanner(System.in);
+void heni () throws Exception {
+
+    Main l = new Main();
+    while (true) {
+        System.out.println("enter file name");
+        l.s = l.sc.nextLine();
+        if (l.s.isEmpty()) {
+            break;
+
+        } else {
+            File og = new File(l.s);
+            og.createNewFile();
+        }
+    }
+}
+    public static void main(String[] args) throws Exception{
+        Main l = new Main();
+
+System.out.println("Write file or create?");
+String c = l.sc.nextLine();
+if (c.contains("write")) {
+   l.Auguso();
+} else {
+    l.heni();
+}
+    }
+}
