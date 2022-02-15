@@ -1,0 +1,28 @@
+package com.company;
+import java.util.Scanner; // Import the Scanner class to read text files
+public class Main {
+int n1;
+int n2;
+int loop;
+Scanner f = new Scanner(System.in);
+ public void run(int n1,int n2, int loop) {
+     Main s = new Main();
+    System.out.println(n1);
+     System.out.println(n2);System.out.println(loop);
+
+}
+    public static void main(String[] args)  {
+    Main s = new Main();
+      System.out.println("enter number one");
+      s.n1  = s.f.nextInt();
+        System.out.println("enter number one");
+        s.n2  = s.f.nextInt();
+        System.out.println("enter number one");
+        s.loop = s.f.nextInt();
+       s.run(s.n1,s.n2,s.loop);
+
+
+
+
+    }
+}
