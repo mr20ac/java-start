@@ -1,0 +1,22 @@
+package com.company;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        String c;
+        Scanner os = new Scanner(System.in);
+        System.out.println("what file");
+        c = os.nextLine();
+BufferedWriter li = new BufferedWriter(new FileWriter(c));
+System.out.println("what to write");
+String bb = os.nextLine();
+li.write(bb);
+li.close();
+
+
+    }
+}
