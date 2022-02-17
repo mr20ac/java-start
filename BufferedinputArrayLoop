@@ -1,0 +1,33 @@
+package com.company;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        ArrayList<String> ios = new ArrayList<String>();
+        String c;
+        Scanner os = new Scanner(System.in);
+        System.out.println("what file");
+        c = os.nextLine();
+        BufferedWriter li = new BufferedWriter(new FileWriter(c));
+       while (true) {
+       System.out.println("enter inputs");
+       String ls = os.nextLine();
+       if (ls.isEmpty()) {
+           break;
+       } else {
+           ios.add(ls);
+           li.write("\n" + ls);
+       }
+
+        }
+       li.close();
+       for (String iff : ios) {
+           System.out.println(iff);
+       }
+    }
+}
