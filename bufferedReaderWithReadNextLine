@@ -1,0 +1,26 @@
+package com.company;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+
+
+        Scanner key = new Scanner(System.in);
+        System.out.println("enter file namessssss");
+        String iov = key.nextLine();
+        BufferedReader lo = new BufferedReader(new FileReader(iov));
+        String gh;
+        while ((lo.readLine()) !=null) {
+            System.out.println(lo.readLine());
+        }
+            lo.close();
+
+    }
+}
