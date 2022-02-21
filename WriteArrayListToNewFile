@@ -1,0 +1,78 @@
+package com.company;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.io.*;
+
+
+interface Osi {
+    public void hee() throws IOException;
+    ArrayList <Integer> yu = new ArrayList<Integer>();
+    Scanner key = new Scanner (System.in);
+    HashSet<Integer> sn = new HashSet<Integer>();
+}
+class ien implements  Osi{
+    int ji;
+
+    String kl = "is.txt";
+    BufferedWriter ip = new BufferedWriter(new FileWriter(kl));
+ien() throws Exception {
+
+    }
+    public void hee() throws IOException {
+       for (Integer oo : yu) {
+           System.out.println(oo);
+           StringBuilder sb = new StringBuilder();
+           String str = "";
+           for (Integer ifd : yu) {
+               str += ifd + ",";
+           }
+           System.out.println(str);
+           while (true) {
+               if (str.isEmpty()) {
+                   break;
+               } else {
+
+                   ip.write(str);
+                   ip.write(str + "\n");
+
+               }
+           }
+       }
+        ip.close();
+for (Integer dd : sn) {
+    System.out.println(sn);
+}
+   }
+   public void ui  () {
+
+
+   }
+}
+
+public class Main extends ien  {
+    Main() throws Exception {
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        ien o = new ien();
+        System.out.println("what file");
+        o.kl = o.key.nextLine();
+        System.out.println("enter values");
+        while (true) {
+            o.ji = o.key.nextInt();
+            if (o.ji < 0) {
+                break;
+        } else  {
+                o.yu.add(o.ji);
+                o.sn.add(o.ji);
+            }
+
+        }
+o.hee();
+    }
+}
