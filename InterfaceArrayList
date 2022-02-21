@@ -1,0 +1,37 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+interface Osi {
+    public void hee();
+    ArrayList <Integer> yu = new ArrayList<Integer>();
+    Scanner key = new Scanner (System.in);
+}
+class ien implements  Osi {
+    int ji;
+   public void hee() {
+       for (Integer oo : yu) {
+           System.out.println(oo);
+       }
+
+   }
+}
+
+public class Main extends ien  {
+    public static void main(String[] args) {
+
+        ien o = new ien();
+        System.out.println("enter values");
+        while (true) {
+            o.ji = o.key.nextInt();
+            if (o.ji < 0) {
+                break;
+        } else  {
+                o.yu.add(o.ji);
+            }
+
+        }
+o.hee();
+    }
+}
