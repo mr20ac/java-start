@@ -1,0 +1,74 @@
+package com.company;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+interface yu {
+
+   public void heu() throws IOException;
+Scanner h = new Scanner(System.in);
+public void ut() throws IOException;
+
+
+}
+class PrintFile implements yu{
+    String v = "";
+    String ic = "";
+    public void cas(String op) {
+        String ic = op;
+       this.ic = op;
+    }
+    public void heu() throws IOException {
+        PrintFile os = new PrintFile();
+        os.v = ic;
+        System.out.println(ic);
+        ArrayList<String> oc = new ArrayList<String>();
+        BufferedWriter od = new BufferedWriter(new FileWriter(ic));
+        System.out.println(ic);
+
+        System.out.println("what to write");
+        while (true) {
+           String d = h.nextLine();
+            if (d.isEmpty()) {
+                System.out.println(d);
+                break;
+            } else {
+                System.out.println("test");
+
+                oc.add(d);
+            }
+        }
+
+
+        String iv = h.nextLine();
+        for (String vd : oc) {
+            od.write(vd);
+            od.write(vd + "\n");
+        }
+            od.close();
+
+
+    }
+
+    public void ut() throws IOException{
+
+
+    }
+}
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+
+System.out.println("enter file");
+PrintFile l = new PrintFile();
+String op = l.h.nextLine();
+l.cas(op);
+l.heu();
+
+
+
+    }
+}
