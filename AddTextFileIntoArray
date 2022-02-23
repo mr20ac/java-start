@@ -1,0 +1,91 @@
+package com.company;
+
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+interface base {
+    void fileinfo ();
+
+
+}
+class write {
+    public void writing() throws IOException {
+        Prints make = new Prints();
+        ArrayList <String> arr = new ArrayList<String>();
+        System.out.println("what to write?");
+        while (true) {
+            Main s = new Main();
+            String text = s.cs.nextLine();
+            if (text.isEmpty()) {
+                break;
+            } else {
+                arr.add(text);
+            }
+        }
+    }
+}
+class Prints {
+    public void fileinfo(String fname) throws IOException{
+
+
+        Main s = new Main();
+        System.out.println(fname);
+        BufferedWriter writ = new BufferedWriter(new FileWriter(fname));
+        while (true) {
+            System.out.println("What to write");
+            String writein = s.cs.nextLine();
+            if (writein.isEmpty()) {
+                break;
+            } else {
+                writ.write(writein);
+                writ.write(writein + "\n");
+            }
+
+        }
+        writ.close();
+readm o = new readm();
+o.reading(fname);
+
+    }
+    Prints() throws IOException {
+    }
+}
+class readm  {
+public  void reading(String fname) throws IOException {
+    System.out.println("here");
+    Main i = new Main();
+    ArrayList<String> afterout = new ArrayList<String>();
+    BufferedReader red = new BufferedReader(new FileReader(fname));
+    System.out.println(fname);
+   String sdi = red.readLine();
+   while (sdi !=null) {
+       afterout.add(sdi);
+       sdi = red.readLine();
+   }
+
+    red.close();
+
+    for (String ret : afterout) {
+    System.out.println("array");
+    System.out.println(ret);
+}
+}
+}
+public class Main {
+    String fname;
+Scanner cs = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        Prints pri = new Prints();
+        String fname;
+        Main os = new Main();
+System.out.println("what file");
+ os.fname = os.cs.nextLine();
+ pri.fileinfo(os.fname);
+ readm aft = new readm();
+
+
+    }
+
+
+}
