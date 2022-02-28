@@ -1,0 +1,39 @@
+package com.company;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+class strings {
+
+}
+class integers {
+
+}
+class makefile {
+    public void is(String filename) throws IOException {
+        BufferedWriter filew = new BufferedWriter(new FileWriter(filename));
+    }
+}
+class printfile {
+
+        }
+        class array {
+
+        }
+public class Main {
+String filename;
+    Scanner cs = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+        Main ls = new Main();
+
+System.out.println("what file");
+ls.filename = ls.cs.nextLine();
+makefile lc = new makefile();
+lc.is(ls.filename);
+
+
+    }
+}
