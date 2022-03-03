@@ -1,0 +1,33 @@
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.StatusLine;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class HttpPostExample {
+
+    public static void main(String args[]) throws IOException {
+        Scanner C = new Scanner(System.in);
+        System.out.println("ENter website name");
+        String website = C.nextLine();
+       CloseableHttpClient hclient = HttpClients.createDefault();
+HttpPost hget = new HttpPost(website);
+HttpResponse hrespone = hclient.execute(hget);
+StatusLine h1 = hrespone.getStatusLine();
+        HttpEntity he = hrespone.getEntity();
+       Locale g = hrespone.getLocale();
+       System.out.println(g);
+        System.out.println(he);
+System.out.println(h1);
+    }
+}
