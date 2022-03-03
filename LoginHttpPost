@@ -1,0 +1,48 @@
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.StatusLine;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.CredentialsProvider;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class HttpPostExample {
+
+    public static void main(String args[]) throws IOException {
+       Scanner scan = new Scanner(System.in);
+       System.out.println("Enter website");
+       String website = scan.nextLine();
+       System.out.println("enter port");
+       int port = scan.nextInt();
+       Scanner nc = new Scanner(System.in);
+       System.out.println("enter username");
+       String username = nc.nextLine();
+       System.out.println("Enter password");
+       String password = nc.nextLine();
+       CredentialsProvider CS = new BasicCredentialsProvider();
+       CS.setCredentials(new AuthScope(website, port),
+               new UsernamePasswordCredentials(username, password));
+        HttpClientBuilder hcb = HttpClients.custom();
+        hcb = hcb.setDefaultCredentialsProvider(CS);
+        CloseableHttpClient hc = hcb.build();
+        HttpPost hget = new HttpPost(website);
+        HttpResponse hresponse = hc.execute(hget);
+        int stat = hresponse.getStatusLine().getStatusCode();
+        System.out.println(stat);
+        
+        
+    }
+}
