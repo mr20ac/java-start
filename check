@@ -1,0 +1,216 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    int oi;
+    int ol;
+    int oc;
+    int ok;
+    String name;
+   int checknum;
+    double amount;
+    public void onetomany (int oi, int ol, int oc,int ok) {
+
+    }
+    public void one(String name, int checknum, double amount) {
+String toprint1 = "";
+String toprint2 = "";
+if (oi == 1) {
+    toprint1 = "one and ";
+} else if  (oi == 2) {
+     toprint1 = "two and ";
+} else if  (oi == 3) {
+    toprint1 = "three and ";
+} else if  (oi == 4) {
+   toprint1 = "four and ";
+} else if  (oi == 5) {
+     toprint1 = "five and ";
+} else if  (oi == 6) {
+     toprint1 = "six and ";
+} else if  (oi == 7) {
+     toprint1 = "seven and ";
+} else if  (oi == 8) {
+    toprint1 = "eight and ";
+} else if  (oi == 9) {
+  toprint1 = "nine and ";
+}
+        if (ol == 1) {
+            toprint2 = "twelve ";
+        } else if  (ol == 2) {
+            toprint2 = "twenty ";
+        } else if  (ol == 3) {
+            toprint2 = "rhity";
+        } else if  (ol == 4) {
+            toprint2 = "fourty ";
+        } else if  (ol == 5) {
+            toprint2 = "fifty ";
+        } else if  (ol == 6) {
+            toprint2 = "sixty and ";
+        } else if  (ol == 7) {
+            toprint2 = "seventy and ";
+        } else if  (ol == 8) {
+            toprint2= "eighty and ";
+        } else if  (ol == 9) {
+            toprint2 = "ninty and ";
+        }
+        if (oc == 1) {
+            toprint2 = "one";
+        } else if  (oc  == 2) {
+            toprint2 = "two";
+        } else if  (oc  == 3) {
+            toprint2 = "three";
+        } else if  (oc  == 4) {
+            toprint2 = "four";
+        } else if  (oc == 5) {
+            toprint2 = "five";
+        } else if  (oc  == 6) {
+            toprint2 = "sixt";
+        } else if  (oc  == 7) {
+            toprint2 = "seven ";
+        } else if  (oc  == 8) {
+            toprint2= "eight";
+        } else if  (oc  == 9) {
+            toprint2 = "nine";
+        }
+        if (oi == 1) {
+            toprint1 = "one and ";
+        } else if  (oi == 2) {
+            toprint1 = "two and ";
+        } else if  (oi == 3) {
+            toprint1 = "three and ";
+        } else if  (oi == 4) {
+            toprint1 = "four and ";
+        } else if  (oi == 5) {
+            toprint1 = "five and ";
+        } else if  (oi == 6) {
+            toprint1 = "six and ";
+        } else if  (oi == 7) {
+            toprint1 = "seven and ";
+        } else if  (oi == 8) {
+            toprint1 = "eight and ";
+        } else if  (oi == 9) {
+            toprint1 = "nine and ";
+        }
+        if (oi == 1) {
+            toprint1 = "one and ";
+        } else if  (oi == 2) {
+            toprint1 = "two and ";
+        } else if  (oi == 3) {
+            toprint1 = "three and ";
+        } else if  (oi == 4) {
+            toprint1 = "four and ";
+        } else if  (oi == 5) {
+            toprint1 = "five and ";
+        } else if  (oi == 6) {
+            toprint1 = "six and ";
+        } else if  (oi == 7) {
+            toprint1 = "seven and ";
+        } else if  (oi == 8) {
+            toprint1 = "eight and ";
+        } else if  (oi == 9) {
+            toprint1 = "nine and ";
+        }if (oi == 1) {
+            toprint1 = "one and ";
+        } else if  (oi == 2) {
+            toprint1 = "two and ";
+        } else if  (oi == 3) {
+            toprint1 = "three and ";
+        } else if  (oi == 4) {
+            toprint1 = "four and ";
+        } else if  (oi == 5) {
+            toprint1 = "five and ";
+        } else if  (oi == 6) {
+            toprint1 = "six and ";
+        } else if  (oi == 7) {
+            toprint1 = "seven and ";
+        } else if  (oi == 8) {
+            toprint1 = "eight and ";
+        } else if  (oi == 9) {
+            toprint1 = "nine and ";
+        }
+
+    if (ok == 01) {
+       toprint2 = "1 cent";
+    } else if  (ok == 02) {
+         toprint2  = "two cents ";
+    } else if  (ok == 04) {
+          toprint2  = "three cents";
+    } else if  (ok == 05) {
+         toprint2  = "four and ";
+    } else if  (ok == 06) {
+          toprint2  = "five and ";
+    } else if  (ok == 07) {
+         toprint2  = "six and ";
+    } else if  (ok == 34) {
+        toprint2  = "seven and ";
+    } else if  (ok == 42) {
+         toprint2  = "eight and ";
+    } else if  (ok == 10) {
+          toprint2  = "nine and ";
+    }
+    System.out.println(toprint1  + toprint2);
+        }
+
+
+
+   public void  generateCheck(String name, int checknum, double amount) {
+       Double i = amount;
+       String gs = String.format("%.0f", i);
+
+       String l = String.valueOf(gs);
+
+       System.out.println(l.length());
+       System.out.println(gs);
+
+       if (l.length() == 1) {
+           boolean one = true;
+           System.out.println("maybe 1");
+       } else if (l.length() == 2) {
+           boolean tenth = true;
+           System.out.println("maybe 3");
+       } else if (l.length() == 3) {
+           System.out.println("maybe 5");
+           boolean hundred = true;
+       } else if (l.length() == 4) {
+           System.out.println("maybe 7");
+           boolean thousand = true;
+       } else if (l.length() == 5) {
+           System.out.println("maybe 9");
+           boolean tenthousand = true;
+       } else if (l.length() == 6) {
+           System.out.println("maybe 11");
+           boolean hundredthousand = true;
+       }
+       ArrayList<Integer> ones = new ArrayList<Integer>();
+       ones.add(checknum);
+       ArrayList<Integer> cap = new ArrayList<Integer>();
+       Main ap = new Main();
+
+       ap.oi = cap.get(0);
+       ap.ol = cap.get(1);
+       ap.oc = cap.get(2);
+
+
+       for (Integer oeie : ones) {
+           cap.add(oeie);
+           System.out.println(oeie);
+
+       }
+       ap.onetomany(ap.oi, ap.ol, ap.oc,ap.ok);
+   }
+    public static void main(String[] args) {
+       Main i = new Main();
+       Scanner cs = new Scanner(System.in);
+       System.out.println("Enter name");
+       i.name = cs.nextLine();
+        System.out.println("Enter check number");
+        i.checknum = cs.nextInt();
+        System.out.println("Enter amount");
+        i.amount = cs.nextDouble();
+i.generateCheck(i.name,i.checknum,i.amount);
+        i.one(i.name,i.checknum,i.amount);
+
+    }
+}
