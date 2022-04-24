@@ -1,0 +1,107 @@
+import com.mongodb.*;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.result.InsertOneResult;
+import org.bson.Document;
+import org.bson.types.ObjectId;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import com.mongodb.MongoException;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.result.InsertOneResult;
+public class mongosearch {
+    public static void main(String args[]) {
+        ConnectionString connectionString = new ConnectionString("mongodb://localhost:27017");
+        MongoClientSettings settings = MongoClientSettings.builder()
+                .applyConnectionString(connectionString)
+                .serverApi(ServerApi.builder()
+                .version(ServerApiVersion.V1)
+                .build())
+                .build();
+        MongoClient mongoclient = MongoClients.create(settings);
+
+
+        databasesearching v = new databasesearching();
+
+        Scanner ap = new Scanner(System.in);
+
+        mongosearch l = new  mongosearch();
+        System.out.println("Select Database");
+        String dataselect = ap.nextLine();
+MongoDatabase database = mongoclient.getDatabase(dataselect);
+System.out.println("What would you like to do?");
+String commas = ap.nextLine();
+        System.out.println(database + "----------------------------qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
+
+if (commas.equalsIgnoreCase("add")) {
+
+    v.adding();
+}
+
+
+    }
+    }
+ADDING --------------------------------------------------
+import com.mongodb.*;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.result.InsertOneResult;
+import org.bson.Document;
+import org.bson.types.ObjectId;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import com.mongodb.MongoException;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.result.InsertOneResult;
+public class mongosearch {
+    public static void main(String args[]) {
+        ConnectionString connectionString = new ConnectionString("mongodb://localhost:27017");
+        MongoClientSettings settings = MongoClientSettings.builder()
+                .applyConnectionString(connectionString)
+                .serverApi(ServerApi.builder()
+                .version(ServerApiVersion.V1)
+                .build())
+                .build();
+        MongoClient mongoclient = MongoClients.create(settings);
+
+
+        databasesearching v = new databasesearching();
+
+        Scanner ap = new Scanner(System.in);
+
+        mongosearch l = new  mongosearch();
+        System.out.println("Select Database");
+        String dataselect = ap.nextLine();
+MongoDatabase database = mongoclient.getDatabase(dataselect);
+System.out.println("What would you like to do?");
+String commas = ap.nextLine();
+        System.out.println(database + "----------------------------qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
+
+if (commas.equalsIgnoreCase("add")) {
+
+    v.adding();
+}
+
+
+    }
+    }
