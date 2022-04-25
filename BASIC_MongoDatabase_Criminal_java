@@ -1,0 +1,103 @@
+import com.mongodb.*;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.result.InsertOneResult;
+import org.bson.Document;
+import org.bson.types.ObjectId;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import com.mongodb.MongoException;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.result.InsertOneResult;
+
+class data{
+        ConnectionString connectionString = new ConnectionString("mongodb://localhost:27017");
+        MongoClientSettings settings = MongoClientSettings.builder()
+                .applyConnectionString(connectionString)
+                .serverApi(ServerApi.builder()
+                        .version(ServerApiVersion.V1)
+                        .build())
+                .build();
+        MongoClient mongoclient = MongoClients.create(settings);
+    }
+
+
+class addingtodata  extends data {
+
+
+
+
+    public void adddata() {
+        Scanner ax = new Scanner(System.in);
+        System.out.println("Select Database");
+        String datase = ax.nextLine();
+        MongoDatabase database = mongoclient.getDatabase(datase);
+            Document doc = new Document();
+
+            Boolean fel = false;
+            Boolean mis = false;
+            Scanner az = new Scanner(System.in);
+
+            mongosearch al = new mongosearch();
+            System.out.println("Would you like to add to the Felony or the misdemeanor Database");
+            String selectvs = az.nextLine();
+            if (selectvs.equalsIgnoreCase("felony")) {
+                fel = true;
+            } else {
+                mis = true;
+            }
+            if (fel = true ) {
+                System.out.println("enter the name");
+                String name = az.nextLine();
+                System.out.println("Enter the Gender");
+                String gender = az.nextLine();
+                System.out.println("enter the crime");
+                String crime = az.nextLine();
+                System.out.println("enter the age");
+                int age = az.nextInt();
+                doc.append("name", name);
+                doc.append("age", age);
+                doc.append("gender", gender);
+                doc.append("crime", crime);
+                database.getCollection("fel").insertOne(doc);
+            }
+        }
+    }
+
+public class mongosearch {
+    public static void main(String args[]) {
+
+
+addingtodata add = new addingtodata();
+
+        Scanner ap = new Scanner(System.in);
+
+
+        System.out.println("What would you like to do?");
+        String commas = ap.nextLine();
+
+        if (commas.equalsIgnoreCase("add")) {
+System.out.println("Felony or Misdemeoer")       ;
+        String pick = ap.nextLine();
+if (pick.equalsIgnoreCase("felony")) {
+    add.adddata();
+} else {
+    System.out.println("Felony or Misdemeoer")       ;
+
+}
+        }
+
+    }
+}
+
+
