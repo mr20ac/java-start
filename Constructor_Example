@@ -1,0 +1,46 @@
+package com.company;
+
+import java.io.BufferedReader;
+
+
+
+class payment {
+    public int getPayment() {
+        return payment;
+    }
+
+    public void setPayment(int payment) {
+        this.payment = payment;
+    }
+
+    private int payment;
+}
+class credit  extends payment{
+    public credit(String name, String id, String date) {
+        this.name = name;
+        this.id = id;
+        this.date = date;
+    }
+
+    private String name,id,date;
+
+    @Override
+    public String toString() {
+        return "credit{" +
+                "name=" + name +
+                ", id=" + id +
+                ", date=" + date +
+                '}';
+    }
+
+
+
+}
+public class Main {
+
+    public static void main(String[] args) {
+credit s = new credit("john","232324","10-02-2022");
+System.out.println(s);
+
+    }
+}
