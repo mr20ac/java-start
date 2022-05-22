@@ -1,0 +1,161 @@
+import com.mongodb.*;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.result.InsertOneResult;
+import org.bson.Document;
+import org.bson.conversions.Bson;
+import org.bson.types.ObjectId;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import com.mongodb.MongoException;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.result.InsertOneResult;
+
+import static com.mongodb.client.model.Filters.eq;
+import org.bson.Document;
+import org.bson.conversions.Bson;
+import com.mongodb.MongoException;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.result.DeleteResult;
+
+class data{
+        ConnectionString connectionString = new ConnectionString("mongodb://localhost:27017");
+        MongoClientSettings settings = MongoClientSettings.builder()
+                .applyConnectionString(connectionString)
+                .serverApi(ServerApi.builder()
+                        .version(ServerApiVersion.V1)
+                        .build())
+                .build();
+        MongoClient mongoclient = MongoClients.create(settings);
+    }
+
+
+class addingtodata  extends data {
+
+
+    public void removedata() {
+        Scanner ax = new Scanner(System.in);
+        System.out.println("Select Database");
+        String datase = ax.nextLine();
+
+        Scanner az = new Scanner(System.in);
+
+        mongosearch al = new mongosearch();
+        System.out.println("Would you like to add to the Felony or the misdemeanor Database");
+        String selectvs = az.nextLine();
+        if (selectvs.equalsIgnoreCase("felony")) {
+            MongoDatabase database = mongoclient.getDatabase(datase);
+            MongoCollection<Document> collection = database.getCollection("fel");
+            System.out.println("name");
+            String ds = az.nextLine();
+            Bson query = eq("title", ds);
+            try {
+                DeleteResult result = collection.deleteOne(query);
+                System.out.println("Deleted document count: " + result.getDeletedCount());
+            } catch (MongoException me) {
+                System.err.println("Unable to delete due to an error: " + me);
+            }
+        } else {
+            MongoDatabase database = mongoclient.getDatabase(datase);
+            MongoCollection<Document> collection = database.getCollection("mis");
+            System.out.println("name");
+            String ds = az.nextLine();
+            Bson query = eq("title", ds);
+            try {
+                DeleteResult result = collection.deleteOne(query);
+                System.out.println("Deleted document count: " + result.getDeletedCount());
+            } catch (MongoException me) {
+                System.err.println("Unable to delete due to an error: " + me);
+            }
+        }
+    }
+
+    public void adddata() {
+        Scanner ax = new Scanner(System.in);
+        System.out.println("Select Databaseh");
+        String datase = ax.nextLine();
+
+        Boolean fel = false;
+        Boolean mis = false;
+        Scanner az = new Scanner(System.in);
+
+        mongosearch al = new mongosearch();
+        System.out.println("Would you like to add to the Felony or the misdemeanor Database");
+        String selectvs = az.nextLine();
+        String da;
+        String co;
+
+        if (selectvs.equalsIgnoreCase("felony")) {
+            da = "felony";
+            co = "fel";
+        } else {
+            da = "misdemeanor";
+            co = "mis";
+        }
+            MongoDatabase dv = mongoclient.getDatabase(da);
+            MongoCollection<Document> collection = dv.getCollection(co);
+            System.out.println("enter the document name");
+            String dname = az.nextLine();
+            System.out.println("enter the name");
+            String name = az.nextLine();
+            System.out.println("Enter the Gender");
+            String gender = az.nextLine();
+            System.out.println("enter the crime");
+            String crime = az.nextLine();
+            System.out.println("enter the age");
+            int age = az.nextInt();
+            try {
+                InsertOneResult result = collection.insertOne(new Document()
+                        .append("_id", new ObjectId())
+                        .append("title", dname)
+                        .append("Name", name)
+                        .append("Gender", gender)
+                        .append("Age", age)
+                        .append("Charges", Arrays.asList(crime)));
+                System.out.println("Success! Inserted document id: " + result.getInsertedId());
+            } catch (MongoException me) {
+                System.err.println("Unable to insert due to an error: " + me);
+            }
+
+
+
+    }
+}
+public class mongosearch {
+    public static void main(String args[]) {
+
+
+addingtodata add = new addingtodata();
+
+        Scanner ap = new Scanner(System.in);
+
+
+        System.out.println("What would you like to do?");
+        String commas = ap.nextLine();
+
+        if (commas.equalsIgnoreCase("add")) {
+
+    add.adddata();
+} else if (commas.equalsIgnoreCase(("remove")))   {
+add.removedata();
+
+}
+        }
+
+    }
+
+
+
