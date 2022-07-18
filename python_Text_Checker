@@ -1,0 +1,6 @@
+test = "fourletters"
+splitted = test[0:4]
+if "four" in splitted :
+    print("it has it")
+else:
+    print("no have")
